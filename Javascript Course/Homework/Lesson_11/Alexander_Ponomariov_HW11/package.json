@@ -1,7 +1,6 @@
 {
   "name": "home_task_11",
   "version": "1.0.0",
-  "description": "",
   "main": "index.html",
   "scripts": {
     "build": "webpack",
@@ -22,5 +21,7 @@
     "presets": [
       "env"
     ]
-  }
+  },
+  "dependencies": {},
+  "description": ""
 }

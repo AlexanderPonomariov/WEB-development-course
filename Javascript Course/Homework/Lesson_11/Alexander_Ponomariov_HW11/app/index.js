@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 validationObj[inputsCollection[i].getAttribute("name")](inputsCollection[i]);
             }
 
-            if (!target.closest('.buy-pop-up').getElementsByClassName('error-message').length) {git
+            if (!target.closest('.buy-pop-up').getElementsByClassName('error-message').length) {
                 target.closest('.pop-up').innerHTML = `
                     <div class="close">X</div>
                     <div>Data was sent successfuly!!!</div>
