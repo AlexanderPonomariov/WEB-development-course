@@ -1,16 +1,20 @@
 <template>
-  <!--<img src="${elem.volumeInfo.imageLinks.smallThumbnail}" alt="${elem.volumeInfo.title}" class="book-image">-->
-  <!--<h2>${elem.volumeInfo.title}</h2>-->
-  <!--<div class="authors">Author${ elem.volumeInfo.authors && elem.volumeInfo.authors.length > 1 ? 's' : '' }: ${elem.volumeInfo.authors ? elem.volumeInfo.authors.join(', ') : 'no information' }</div>-->
-  <!--<div class="pub-date">Published date: ${new Date(elem.volumeInfo.publishedDate).toLocaleDateString()}</div>-->
-  <!--<div class="description">Description: ${elem.volumeInfo.description ? elem.volumeInfo.description : 'no infiormation'}</div>-->
+  <div>
+    <img :src="book.volumeInfo.imageLinks.smallThumbnail" :alt="book.volumeInfo.title" class="book-image">
+    <h2>{{book.volumeInfo.title}}</h2>
+    <div class="authors">Author{{ book.volumeInfo.authors && book.volumeInfo.authors.length > 1 ? 's' : '' }}: {{book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'no information' }}</div>
+    <div class="pub-date">Published date: {{new Date(book.volumeInfo.publishedDate).toLocaleDateString()}}</div>
+    <div class="description">Description: {{book.volumeInfo.description ? book.volumeInfo.description : 'no infiormation'}}</div>
 
-  <!--<button class="buy-button">Buy</button>-->
+    <button class="buy-button">Buy</button>
+  </div>
+
 </template>
 
 <script>
   export default {
     name: 'Books',
+    props: ["book","index"],
     data () {
       return {
 

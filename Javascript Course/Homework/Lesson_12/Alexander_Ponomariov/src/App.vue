@@ -1,11 +1,14 @@
 <template>
   <div id="app">
     <SearchForm />
-    <div>{{books}}</div>
+    <!--<div v-for="(book, index) in books.items">{{book}}</div>-->
 
-    <!--<Books-->
-    <!--v-for="(book, index) in books"-->
-    <!--/>-->
+    <Books
+      v-for="(book,index) in books.items"
+      :book="book"
+      :index="index"
+      :key="book.id"
+    />
   </div>
 </template>
 

@@ -21,9 +21,7 @@
           'https://www.googleapis.com/books/v1/volumes?q=harry',
           {method:'get'},)
         .then( response => response.json())
-        .then( books => {
-          this.$parent.books = books;
-        });
+        .then( books => this.$parent.books = books);
       }
     }
   }
