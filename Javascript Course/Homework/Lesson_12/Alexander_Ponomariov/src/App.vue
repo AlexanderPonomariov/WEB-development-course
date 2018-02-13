@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <SearchForm />
+    <SearchForm
+      :cart="cart"
+    />
     <!--<div v-for="(book, index) in books.items">{{book}}</div>-->
 
     <Books
@@ -9,6 +11,11 @@
       :index="index"
       :key="book.id"
     />
+
+    <Cart
+      v-show="showAddedToCart"
+    />
+
   </div>
 </template>
 
@@ -16,12 +23,15 @@
 
 import Books from './components/Books';
 import SearchForm from './components/SearchForm';
+import Cart from './components/Cart';
 
 export default {
   name: 'app',
   data () {
     return {
       books: {},
+      cart: [],
+      showAddedToCart: false,
     }
   },
   methods: {
@@ -29,7 +39,8 @@ export default {
   },
   components: {
     Books,
-    SearchForm
+    SearchForm,
+    Cart
   }
 }
 </script>
