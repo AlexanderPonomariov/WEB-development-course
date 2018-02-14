@@ -4,8 +4,11 @@
       Goods in cart: {{cart.length}}
       <div class="cart-small">
         <div class="cart-item" v-for="cartItem in cart">
-          <img :src="cartItem.volumeInfo.imageLinks.smallThumbnail" :alt="cartItem.volumeInfo.title" class="book-image">
+          <img :src="cartItem.volumeInfo.imageLinks.smallThumbnail" :alt="cartItem.volumeInfo.title" class="book-image" width="20%">
           <h4>{{cartItem.volumeInfo.title}}</h4>
+        </div>
+        <div class="go-to-order">
+          <button @click="goToCart">Go to order</button>
         </div>
       </div>
     </div>
@@ -35,6 +38,9 @@
           {method:'get'},)
         .then( response => response.json())
         .then( books => this.$parent.books = books);
+      },
+      goToCart() {
+        this.$parent.showOrder = true;
       }
     }
   }

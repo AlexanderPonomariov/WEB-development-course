@@ -13,7 +13,9 @@
     />
 
     <Cart
-      v-show="showAddedToCart"
+      :showAddedToCart="showAddedToCart"
+      :showOrder="showOrder"
+      :cart="cart"
     />
 
   </div>
@@ -32,6 +34,7 @@ export default {
       books: {},
       cart: [],
       showAddedToCart: false,
+      showOrder: false,
     }
   },
   methods: {

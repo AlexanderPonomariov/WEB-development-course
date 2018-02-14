@@ -20,6 +20,8 @@
   position: absolute;
   background: aqua;
   width: 50%;
+  height: 90%;
+  overflow-y: scroll;
   min-height: 50%;
   left: 25%;
   top: 50%;
@@ -61,8 +63,25 @@
   font-size: .75em;
 }
 .cart .cart-small {
-  display: none;
+  height: 0;
+  overflow: hidden;
 }
 .cart:hover .cart-small {
-  display: block;
+  animation: 3s;
+  height: 100%;
+  transition: height .4s linear;
+  position: absolute;
+  background-color: grey;
+  overflow-y: scroll;
+}
+.cart-item .book-image, .cart-item h4 {
+  display: inline-block;
+}
+.cart-item {
+  margin-bottom: 20px;
+  clear: both;
+}
+.go-to-order {
+  width: 100%;
+  clear: both;
 }
